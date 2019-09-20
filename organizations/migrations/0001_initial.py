@@ -20,7 +20,9 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     "id",
-                    models.AutoField(
+                    models.UUIDField(
+                        default=uuid.uuid(),
+                        editable=False,
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
@@ -70,7 +72,9 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     "id",
-                    models.AutoField(
+                    models.UUIDField(
+                        default=uuid.uuid4(),
+                        editable=False,
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
@@ -110,7 +114,9 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     "id",
-                    models.AutoField(
+                    models.UUIDField(
+                        default=uuid.uuid4(),
+                        editable=False,
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
