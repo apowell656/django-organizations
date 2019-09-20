@@ -22,7 +22,7 @@
 # CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+import uuid
 import warnings
 
 from django.conf import settings
@@ -94,6 +94,7 @@ class AbstractOrganization(
     """
     Abstract Organization model.
     """
+    id = models.UUIDField(default=uuid.uuid4(), editable=False,primary_key=True)
     slug = SlugField(
         max_length=200,
         blank=False,
@@ -207,6 +208,7 @@ class AbstractOrganizationUser(
     """
     Abstract OrganizationUser model
     """
+    id = models.UUIDField(default=uuid.uuid4(), editable=False,primary_key=True)
     is_admin = models.BooleanField(default=False)
 
     class Meta(AbstractBaseOrganizationUser.Meta):
@@ -255,6 +257,7 @@ class AbstractOrganizationOwner(
     """
     Abstract OrganizationOwner model
     """
+    id = models.UUIDField(default=uuid.uuid4(), editable=False,primary_key=True)
 
     class Meta:
         abstract = True
