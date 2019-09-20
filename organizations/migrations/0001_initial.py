@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 (
                     "id",
                     models.UUIDField(
-                        default=uuid.uuid(),
+                        default=uuid.uuid4(),
                         editable=False,
                         auto_created=True,
                         primary_key=True,
