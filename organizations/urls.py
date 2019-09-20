@@ -44,7 +44,7 @@ urlpatterns = [
         name="organization_add",
     ),
     url(
-        r"^(?P<organization_pk>[\d]+)/",
+        r"^(?P<organization_pk>[0-9a-f-]+)/",
         include(
             [
                 url(
@@ -81,28 +81,28 @@ urlpatterns = [
                                 name="organization_user_add",
                             ),
                             url(
-                                r"^(?P<user_pk>[\d]+)/remind/$",
+                                r"^(?P<user_pk>[0-9a-f-]+)/remind/$",
                                 view=login_required(
                                     views.OrganizationUserRemind.as_view()
                                 ),
                                 name="organization_user_remind",
                             ),
                             url(
-                                r"^(?P<user_pk>[\d]+)/$",
+                                r"^(?P<user_pk>[0-9a-f-]+)/$",
                                 view=login_required(
                                     views.OrganizationUserDetail.as_view()
                                 ),
                                 name="organization_user_detail",
                             ),
                             url(
-                                r"^(?P<user_pk>[\d]+)/edit/$",
+                                r"^(?P<user_pk>[0-9a-f-]+)/edit/$",
                                 view=login_required(
                                     views.OrganizationUserUpdate.as_view()
                                 ),
                                 name="organization_user_edit",
                             ),
                             url(
-                                r"^(?P<user_pk>[\d]+)/delete/$",
+                                r"^(?P<user_pk>[0-9a-f-]+)/delete/$",
                                 view=login_required(
                                     views.OrganizationUserDelete.as_view()
                                 ),
