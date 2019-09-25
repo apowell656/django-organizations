@@ -10,6 +10,7 @@ import organizations.fields
 
 class Migration(migrations.Migration):
 
+
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ("organizations", "0003_field_fix_and_editable"),
